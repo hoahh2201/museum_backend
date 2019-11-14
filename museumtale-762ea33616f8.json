@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "museumtale",
+  "private_key_id": "762ea33616f8686c21c4819e696c36f686c1b138",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDf9pzsmon8hzNJ\nwI4T6Fo4c3xAr9H/2Vq3l2Oe//UBHYlns5SJI8BZXGFkxFYyC8fj1Oj1LhvUyp/Z\ncS6OYXw9tkwWQTisdyqZd5sI470Tq/8ZS7UNCyfPPUw1y6DyM58aKtYIxyZlBtiX\nXgia/vArW2z8TzflCl5jlmfSMx8BgeBQJJPvaW4ao7lAs1E2RchhK1wUJbSbKK0l\nJ50GtRpMa1RSBZRMRMhdHYl39dQKw/6JZ1DwPw85wH42oMkqUEnUuRDnId/s5tLy\nWi9woFHLTXPa63vBfMRfdx2YTqMy9xEo9zKVFqf1ybdkFDFOELi0nbrR4w+cIz7C\nVYngGDBPAgMBAAECggEAPtd+3rDaKP5yuK4L77ARqKdW5Puwi/6cAsm6zUF6qK52\nAKAV/IkIjspqFZE1smM12krCdxFSA9o7EhM9Afx+lP5SySfR1Cq3zEoQOWVVh3CK\narmgeqF3sSG9AZc6eNtdOEVuuxXOQyixm39qILuJ/lBv+zfrMhw/sefhB80KVSxq\nd5YbhVg51UM9MX/wNNGGmGbTOAyTev4Dxl6b3AZwMvPZGFossBogWgdBjEdtQlZJ\n0urv3vYSsVrVvIO4OY0NVSwtm9S59ny1gfrL3kreD+1BC+modP71fQ+66h69rBiM\nYB/Eu9bWWbbvlbj+Xv4wiIVO2LLsY70jwswDlGreuQKBgQD+vxjGFPxnBrRpfdfh\ncykd4iAt8frGSFk2PcGIpZ4h/zQ9b0IHM1BCTfjAH4h6VzSrqms7fw8exWGkWVoh\nnSt4z3waTAxISAf06MXfxHDPWgF+8+G9AWjoDg8dqlDBKdqMk9e3el49l+rv7nPI\nzCA+tl+IAb+Yvh8TEHxhcvmfWwKBgQDhEL0iCxk38vCu9Ydz+9TTdDT9yUvqzrCT\ngcgG80KKajLl/b1emKT/nk106zbh7N3S9WpUesCEeXjpGnfM8LvA6QpOdqIv5icF\nl6SEjwKUkjBA5Zu4K5m1MtwXH+62KGAu34tqSvbAswXzHyOWhJOdG1rQ0gj4gfmK\nrlttxsfZHQKBgQDTcs8fa7/tzFTn0zrjuXEBivZm7JnZB6h1K2F/COlvEqPL8pN9\n4ovV3V6CKipgUg44B2ampdppEjDv9/KmQA0bZC2ArmrrfE6ObMAB8s4obm8bb1eK\nSKdJJpJJb1tEWnc7hGPjucCLo5Owv95/Z1/EbiBxhfIA2J52dpKnWIX2TQKBgQDb\nHEu1Z+6uTILLIlgzr3lcP2cTqDSTrZO0l4XgVlVyob9Zr3T8Mkl4Xmp0KEZvHwY6\nShixlCv3DLeM4Oq/B6MSRQ52owJ09XEJ/b76GqxdbhEyLRcz7qafBJvGm5zvlFFH\ncPSuj7q4kdF6BtfDwuBe9HGumLyJCyihPeve7MZFdQKBgH2Thcyg+uNCXhmhJXSk\nDUN++Uzixe7K0pj1yAln4A9h6FpYQ5j4IZuyDsnn95nBHwOXkTXAm8GtJypUk7n6\nkKB+iVdUBYx9xdGSvcOcBA+750QlPadJpeHpcGR1HHTWqm122xpZ2w6u/uDK2grd\n3Pd+1fN0oDHATWIlENHsPUsz\n-----END PRIVATE KEY-----\n",
+  "client_email": "museum@museumtale.iam.gserviceaccount.com",
+  "client_id": "110892613480751028321",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/museum%40museumtale.iam.gserviceaccount.com"
+}

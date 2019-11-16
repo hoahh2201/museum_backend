@@ -8,7 +8,9 @@ from dataclasses import asdict
 import os
 import uuid
 
-from google.cloud import firestore
+
+
+from google.cloud import firestore 
 
 from .data_classes import Product
 
@@ -58,23 +60,7 @@ def list_products():
        A list of Product objects.
     """
 
-    products = firestore_client.collection('products').order_by('created_at').get()
+   #  products = firestore_client.collection('products').order_by('created_at').where("name", ">=", "%Singapore%").orderBy("name", "asc").get()
+    products = firestore_client.collection('products').order_by('name').get()
     product_list = [Product.deserialize(product) for product in list(products)]
     return product_list
-
-def calculate_total_price(product_ids):
-    """
-    Helper function for calculating the total price of a list of products.
-
-    Parameters:
-       product_ids (List[str]): A list of product IDs.
-
-    Output:
-       The total price.
-    """
-
-    total = 0
-    for product_id in product_ids:
-        product = get_product(product_id)
-        total += product.price
-    return total

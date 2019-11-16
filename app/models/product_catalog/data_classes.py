@@ -16,8 +16,8 @@ class Product:
     name: str
     description: str
     image: str
-    labels: List[str]
-    price: float
+    # labels: List[str]
+    # price: float
     created_at: int
     id: str = None
 
@@ -40,8 +40,8 @@ class Product:
                 name=data.get('name'),
                 description=data.get('description'),
                 image=data.get('image'),
-                labels=data.get('labels'),
-                price=data.get('price'),
+                # labels=data.get('labels'),
+                # price=data.get('price'),
                 created_at=data.get('created_at')
             )
 

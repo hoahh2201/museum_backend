@@ -8,42 +8,107 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
   <script src="/static/js/initFirebase.js"></script>
-  <script src="/static/js/signInOutWithGoogle.js"></script>
-  <script src="/static/js/script.js"></script>
   
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
   <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
 
 </head>
 <body>
-  <nav class="navbar has-background-dark">
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item has-text-light" href="/">Fansipan Store</a>
-      </div>
-      {% block navbar_end %}
-      <div class="navbar-end">
-        {% if auth_context %}
-        <div class="navbar-item">
-          <a id="username" class="has-text-white">{{ auth_context.get('username') }} ({{ auth_context.get('email') }})</a>
-        </div>
-        <div class="navbar-item">
-          <a id="sign-out-control" class="has-text-white" onclick="signOutWithGoogle()"><i class="fas fa-sign-out-alt"></i></a>
-        </div>
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary has-background-info" href="/sell"><strong>Add new product</strong></a>
+    <section class="hero is-primary is-bold is-medium">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">MUSEUM</h1>
+            <h2 class="subtitle"><strong>Start for searching!</strong></h2>
           </div>
         </div>
-        {% else %}
-        <div class="navbar-item">
-            <a id="sign-in-control" class="has-text-white" href="/signin">Sign in with <i class="fab fa-google"></i></a>
+      </section>
+      <section class="section">
+        <div class="container">
+            <div id="view">
+                <label for="result">Search:</label>
+                <input id="result" name="result" type="text" class="border border-info ">
+              
+            </div>
+    
+            <div class="container">
+              <button class="btn dusty-grass-gradient" type="button" id="myButton">
+                  <strong>Find</strong>
+              </button>
+            </div>
+            <br>
+            <br>
         </div>
-        {% endif %}
-      </div>
-      {% endblock %}
-    </div>
-  </nav>
-  {% block content %}{% endblock %}
+        
+    
+          <div class="container">
+            <div class="tile is-ancester">
+              {% for column in [0] %}
+              <div class="tile is-parent is-12 is-vertical">
+                <div class="tile is-child"> 
+                  {% for product in products[column::] %}
+                  <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-square">
+                        <img src="https://storage.cloud.google.com/{{ bucket }}/{{ product.image }}" onerror="this.src='https://storage.cloud.google.com/{{bucket}}/placeholder.png'">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <h1 class="title is-spaced">{{ product.name }}</h1>
+                      <p class="subtitle is-6">{{ product.description }}</p>
+                      
+                      
+                    </div>
+    
+                  </div>
+                  <br>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+      </section>
+      <script type="text/javascript">
+        $("#result").keyup(function () {
+              var $SCRIPT_ROOT = {{ request.script_root| tojson | safe
+          }};
+          var find = $(this).val();
+          console.log(find)
+          $.ajax({
+              type: "POST",
+              url: $SCRIPT_ROOT + "/search/",
+              data: find,
+              success: function (data) {
+                  // $('#result2').val(data);
+                  // $('#result2').val(data);
+                  data = JSON.parse(data);
+                  $('.tile.is-child').empty();
+                  data.product_list.forEach(function(v){
+                    render = `<div class="card">
+                    <div class="card-image">
+                      <figure class="image is-square">
+                        <img src="https://storage.cloud.google.com/${data.bucket}/${v.image}" onerror="this.src='https://storage.cloud.google.com/{{bucket}}/placeholder.png'">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <h1 class="title is-spaced">${v.name}</h1>
+                      <p class="subtitle is-6">${v.description}</p>
+                      
+                      
+                    </div>
+    
+                  </div>
+                  <br>`;
+                  $('.tile.is-child').append(render);
+                  });
+                  
+              }
+          })
+        });
+        </script>
 </body>
 </html>
